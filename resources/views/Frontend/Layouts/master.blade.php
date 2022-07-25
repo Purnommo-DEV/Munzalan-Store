@@ -182,7 +182,43 @@
 
             <nav class="mobile-nav">
                 <ul class="mobile-menu">
-                    @if (Route::has('HalamanLogin'))
+                    @if (Auth::user() == NULL)
+                    <li>
+                        <a href="{{ route('HalamanBelanja') }}">Produk</a>
+                    </li>
+                    <li>
+                        <a href="{{route('HalamanLogin')}}">Login</a>
+                    </li>
+                    <li>
+                        <a href="{{route('HalamanRegister')}}">Register</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('FrontTentangKami') }}">Tentang Kami</a>
+                    </li>
+                    @elseif (Auth::user()->peran == "USER")
+                    <li>
+                        <a href="#" class="sf-with-ul" style="font-size: 20px;">
+                            <i class="icon-user"></i>
+                            {{(Auth::user()->name)}}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('HalamanProdukFavorit') }}">Produk Favorit</a>
+                    </li>
+                    <li>
+                        <a title="Profile" href="{{route('HalamanProfile')}}" class="sf-with-ul">Profile</a>
+                    </li>
+                    <li>
+                        <a title="Keluar" href="{{route('UserLogOut')}}" 
+                        onclick="event.preventDefault(); 
+                        document.getElementById('logout-form').submit();">Keluar</a>
+                    </li>
+                        <form id="logout-form" action="{{route('UserLogOut')}}" method="post">
+                            @csrf
+                        </form>
+                    @endif
+
+                    {{-- @if (Route::has('HalamanLogin'))
                     
                     @elseif (Auth::user()->peran == "USER")
                     <li class="active">
@@ -205,7 +241,7 @@
                     <li class="active">
                         <a href="{{route('HalamanRegister')}}">Register</a>
                     </li>
-                    @endif
+                    @endif --}}
                 </ul>
             </nav>
 

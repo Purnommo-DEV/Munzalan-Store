@@ -32,20 +32,34 @@ use App\Models\Produk;
                             <!-- End .product-main-image -->
 
                             <div id="product-zoom-gallery" class="product-image-gallery">
-                                <a class="product-gallery-item active" href="#" data-image="{{asset('gambar/gambar_produk')}}/{{$gambar_produk->gambar2}}" data-zoom-image="{{asset('gambar/gambar_produk')}}/{{$gambar_produk->gambar2}}">
-                                    <img src="{{asset('gambar/gambar_produk')}}/{{$gambar_produk->gambar2}}" alt="product side">
-                                </a>
 
-                                <a class="product-gallery-item" href="#" data-image="{{asset('gambar/gambar_produk')}}/{{$gambar_produk->gambar3}}" data-zoom-image="{{asset('gambar/gambar_produk')}}/{{$gambar_produk->gambar3}}">
-                                    <img src="{{asset('gambar/gambar_produk')}}/{{$gambar_produk->gambar3}}" alt="product cross">
-                                </a>
-
-                                <a class="product-gallery-item" href="#" data-image="{{asset('gambar/gambar_produk')}}/{{$gambar_produk->gambar4}}" data-zoom-image="{{asset('gambar/gambar_produk')}}/{{$gambar_produk->gambar4}}">
-                                    <img src="{{asset('gambar/gambar_produk')}}/{{$gambar_produk->gambar4}}" alt="product with model">
-                                </a>
-
-                                <a class="product-gallery-item" href="#" data-image="{{asset('gambar/gambar_produk')}}/{{$gambar_produk->gambar5}}" data-zoom-image="{{asset('gambar/gambar_produk')}}/{{$gambar_produk->gambar5}}">
-                                    <img src="{{asset('gambar/gambar_produk')}}/{{$gambar_produk->gambar5}}" alt="product back">
+                                 <a class="product-gallery-item active" href="#" data-image="{{asset('gambar/gambar_produk')}}/{{$gambar_produk->gambar2}}" data-zoom-image="{{asset('gambar/gambar_produk')}}/{{$gambar_produk->gambar2}}">
+                                    @if ($gambar_produk->gambar2 == NUll)
+                                    <img src="{{ asset('gambar/tanpa_gambar/tanpaGambar.png') }}">
+                                    @else
+                                    <img src="{{ asset('gambar/gambar_produk') }}/{{ $gambar_produk->gambar2 }}">
+                                    @endif
+                                </a>   
+                                 <a class="product-gallery-item active" href="#" data-image="{{asset('gambar/gambar_produk')}}/{{$gambar_produk->gambar2}}" data-zoom-image="{{asset('gambar/gambar_produk')}}/{{$gambar_produk->gambar2}}">
+                                    @if ($gambar_produk->gambar3 == NUll)
+                                    <img src="{{ asset('gambar/tanpa_gambar/tanpaGambar.png') }}">
+                                    @else
+                                    <img src="{{ asset('gambar/gambar_produk') }}/{{ $gambar_produk->gambar3 }}">
+                                    @endif
+                                </a>                                            
+                                 <a class="product-gallery-item active" href="#" data-image="{{asset('gambar/gambar_produk')}}/{{$gambar_produk->gambar2}}" data-zoom-image="{{asset('gambar/gambar_produk')}}/{{$gambar_produk->gambar2}}">
+                                    @if ($gambar_produk->gambar4 == NUll)
+                                    <img src="{{ asset('gambar/tanpa_gambar/tanpaGambar.png') }}">
+                                    @else
+                                    <img src="{{ asset('gambar/gambar_produk') }}/{{ $gambar_produk->gambar4 }}">
+                                    @endif
+                                </a>   
+                                 <a class="product-gallery-item active" href="#" data-image="{{asset('gambar/gambar_produk')}}/{{$gambar_produk->gambar2}}" data-zoom-image="{{asset('gambar/gambar_produk')}}/{{$gambar_produk->gambar2}}">
+                                    @if ($gambar_produk->gambar5 == NUll)
+                                    <img src="{{ asset('gambar/tanpa_gambar/tanpaGambar.png') }}">
+                                    @else
+                                    <img src="{{ asset('gambar/gambar_produk') }}/{{ $gambar_produk->gambar5 }}">
+                                    @endif
                                 </a>
                             </div>
                             <!-- End .product-image-gallery -->

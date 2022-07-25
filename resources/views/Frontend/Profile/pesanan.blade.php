@@ -35,8 +35,8 @@
                                     </tr>
                                     <tr>
                                         <td>Alamat</td>
-                                        <td>{{$pesanans->alamat->alamat}}, {{$pesanans->alamat->kota->name}}
-                                            ,{{$pesanans->alamat->kode_pos}}, {{$pesanans->alamat->provinsi->name}},
+                                        <td>{{$pesanans->alamat->alamat}}, {{$pesanans->alamat->kota->name}},
+                                            {{$pesanans->alamat->provinsi->name}},
                                             {{$pesanans->alamat->negara}}
                                         </td>
                                     </tr>
