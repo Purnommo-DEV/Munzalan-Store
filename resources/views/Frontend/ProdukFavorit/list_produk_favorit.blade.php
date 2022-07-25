@@ -78,21 +78,36 @@
                     <div class="product-nav product-nav-thumbs">
                         @foreach ($gambar_produk as $gambar_produks)
                             @if ($data_favorits->produk_id == $gambar_produks->produk_id)
-                                <a href="#" class="active">
-                                    <img src="{{ asset('gambar/gambar_produk') }}/{{ $gambar_produks->gambar2 }}" alt="product desc">
-                                </a>   
-                                <a href="#" class="active">
-                                    <img src="{{ asset('gambar/gambar_produk') }}/{{ $gambar_produks->gambar3 }}" alt="product desc">
-                                </a>                                            
-                                <a href="#" class="active">
-                                    <img src="{{ asset('gambar/gambar_produk') }}/{{ $gambar_produks->gambar4 }}" alt="product desc">
-                                </a>   
-                                <a href="#" class="active">
-                                    <img src="{{ asset('gambar/gambar_produk') }}/{{ $gambar_produks->gambar5 }}" alt="product desc">
-                                </a>   
+                            <a href="#" class="active">
+                                @if ($gambar_produks->gambar2 == NUll)
+                                <img src="{{ asset('gambar/tanpa_gambar/tanpaGambar.png') }}">
+                                @else
+                                <img src="{{ asset('gambar/gambar_produk') }}/{{ $gambar_produks->gambar2 }}">
+                                @endif
+                            </a>   
+                            <a href="#" class="active">
+                                @if ($gambar_produks->gambar3 == NUll)
+                                <img src="{{ asset('gambar/tanpa_gambar/tanpaGambar.png') }}">
+                                @else
+                                <img src="{{ asset('gambar/gambar_produk') }}/{{ $gambar_produks->gambar3 }}">
+                                @endif
+                            </a>                                            
+                            <a href="#" class="active">
+                                @if ($gambar_produks->gambar4 == NUll)
+                                <img src="{{ asset('gambar/tanpa_gambar/tanpaGambar.png') }}">
+                                @else
+                                <img src="{{ asset('gambar/gambar_produk') }}/{{ $gambar_produks->gambar4 }}">
+                                @endif
+                            </a>   
+                            <a href="#" class="active">
+                                @if ($gambar_produks->gambar5 == NUll)
+                                <img src="{{ asset('gambar/tanpa_gambar/tanpaGambar.png') }}">
+                                @else
+                                <img src="{{ asset('gambar/gambar_produk') }}/{{ $gambar_produks->gambar5 }}">
+                                @endif
+                            </a> 
                             @endif
                         @endforeach
-                        
                     </div><!-- End .product-nav -->
                 </div><!-- End .product-body -->
             </div><!-- End .col-lg-6 -->

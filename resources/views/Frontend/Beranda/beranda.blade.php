@@ -1,4 +1,4 @@
-@extends('Frontend.Layouts.master', ['title'=>'Beranda'])
+@extends('Frontend.Layouts.master', ['title'=>'Munzalan Store'])
 
 @section('konten')
 @php

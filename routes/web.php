@@ -100,6 +100,9 @@ Route::middleware(['auth', 'hakAkses:ADMIN'])->group(function () {
     Route::post('/simpanUser',           [RegisterController::class, 'tambah_user'])->name('TambahUser');
     Route::get('/kota/{provinsi_id}',    [PemeriksaanController::class, 'getCities']);
     Route::post('/periksa',              [PemeriksaanController::class, 'periksa_belanjaan'])->name('periksaBelanjaan');
+    Route::post('/tampilProdukHarga',             [DetailProdukController::class, 'tampilProdukHarga']);
+    Route::post('/tampilProdukStok',              [DetailProdukController::class, 'tampilProdukStok']);
+    Route::post('/tampilBerat',                   [DetailProdukController::class, 'tampilBerat']);
 
 Route::middleware(['auth', 'hakAkses:USER'])->group(function () {
     // PROFIL PENGGUNA
@@ -114,9 +117,6 @@ Route::middleware(['auth', 'hakAkses:USER'])->group(function () {
 
     // DETAIL PRODUK
     Route::post('/tambahKeKeranjang',             [DetailProdukController::class, 'tambah_ke_keranjang'])->name('TambahKeKeranjang');
-    Route::post('/tampilProdukHarga',             [DetailProdukController::class, 'tampilProdukHarga']);
-    Route::post('/tampilProdukStok',              [DetailProdukController::class, 'tampilProdukStok']);
-    Route::post('/tampilBerat',                   [DetailProdukController::class, 'tampilBerat']);
 
     // PRODUK FAVORIT
     Route::post('/deleteProdukFavorit',           [ProdukFavoritController::class, 'delete_produk_favorit']);
